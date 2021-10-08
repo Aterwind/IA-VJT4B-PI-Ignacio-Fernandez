@@ -6,7 +6,7 @@ public class BoidManager : MonoBehaviour
 {
     public static BoidManager instance;
 
-    public List<Boid> Boids = new List<Boid>();
+    public List<BoidNew> Boids = new List<BoidNew>();
     void Awake()
     {
         if(instance != null)
@@ -19,8 +19,7 @@ public class BoidManager : MonoBehaviour
         }
     }
 
-
-    public void Addboid(Boid b)
+    public void Addboid(BoidNew b)
     {
         if (Boids.Contains(b))
             return;

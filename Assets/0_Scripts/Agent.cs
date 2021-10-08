@@ -29,8 +29,7 @@ public class Agent : MonoBehaviour
             ApplyForce(Seek(_target2) * SeekWeight);
         }
 
-        transform.position += _velocity * Time.deltaTime;
-        transform.forward = _velocity;
+      
     }
 
     Vector3 Seek(GameObject _tar) // o void Seek(GameObject _tar)
@@ -55,11 +54,13 @@ public class Agent : MonoBehaviour
             //speed = maxSpeed * (desired.magnitude / arriveRadius); //Comparte la mismo funcion, pero la de abajo un mapa de "Noise"
             speed = Map(desired.magnitude, 0, arriveRadius, 0, maxSpeed);
             desired.Normalize();
+            desired.y = 0;
             desired *= maxSpeed;
         }
         else
         {
             desired.Normalize();
+            desired.y = 0;
             desired *= maxSpeed;
         }
 
